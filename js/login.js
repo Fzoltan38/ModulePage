@@ -15,6 +15,10 @@
                     headers: { "Content-Type": "application/json" }
                 })
 
+                if (!httpRequest.ok) {
+                    alert("Nem regisztrált még.")
+                }
+
                 let httpResponse = await httpRequest.json();
                 localStorage.setItem("token", httpResponse.token)
                 let convertToken = jwtDecode(httpResponse.token);
