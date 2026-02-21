@@ -11,11 +11,25 @@ async function loadComponent(name) {
         const html = await response.text();
         contentDiv.innerHTML = html;
 
+        //Régi script törlése
+        const oldScript = document.getElementById('component-script');
+        if (oldScript) oldScript.remove();
 
+        //Új script betöltés
+        const script = document.createElement('script');
+        script.src = `js/${name}.js`;
+        script.id = 'component-script';
+
+        //Ha nincs JS fájl, ne dobjon hibát
+        script.onerror = () => {
+            console.log(`Nincs ${name}.js fájl.`);
+        }
+
+        document.body.appendChild(script);
 
     }
-    catch {
-
+    catch (error) {
+        contentDiv.innerHTML = `<p class="text-danger">Hiba ${error.message}</p>`;
     }
 }
 
