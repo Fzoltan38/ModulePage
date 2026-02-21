@@ -33,6 +33,13 @@ navLinks.forEach(link => {
         //Komponens betöltése
         loadComponent(link.dataset.target);
 
+        // Mobil menü bezárása
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) {
+            bsCollapse.hide();
+        }
+
+
     })
 })
 
