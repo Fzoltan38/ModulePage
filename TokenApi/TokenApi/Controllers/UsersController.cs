@@ -9,8 +9,10 @@ namespace TokenApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class UsersController : ControllerBase
     {
+        [Authorize]
         [HttpPost("register")]
         public async Task<ActionResult> Register(User user)
         {
@@ -28,36 +30,53 @@ namespace TokenApi.Controllers
 
                 return Ok();
             }
-               
+
         }
 
         [HttpPost("login")]
         public async Task<ActionResult> Login(string userName, string password)
         {
             GenerateToken token = new GenerateToken();
-            using (var context = new AuthdbContext()) 
+            using (var context = new AuthdbContext())
             {
                 var usr = await context.Users.FirstOrDefaultAsync(usr => usr.Username == userName && usr.Password == password);
 
-                if (usr != null) 
+                if (usr != null)
                 {
-                    return Ok(new { token = token.Token(usr.Username, usr.Id)});
+                    return Ok(new { token = token.Token(usr.Username, usr.Id) });
                 }
 
                 return BadRequest();
             }
-               
+
         }
 
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult> GetAllUser() 
+        public async Task<ActionResult> GetAllUser()
         {
             using (var context = new AuthdbContext())
             {
                 return Ok(await context.Users.ToListAsync());
             }
-                
+
+        }
+
+        [Authorize]
+        [HttpDelete]
+        public async Task<ActionResult> DeleteUser(int id)
+        {
+            using (var context = new AuthdbContext())
+            {
+                var user = await context.Users.FindAsync(id);
+                if (user != null)
+                {
+                    context.Users.Remove(user);
+                    await context.SaveChangesAsync();
+                    return Ok(new { message = "Sikeres törlés." });
+                }
+                return NotFound(new { message = "Sikertelen törlés." });
+            }
         }
     }
 }
