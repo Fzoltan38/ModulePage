@@ -78,5 +78,43 @@ namespace TokenApi.Controllers
                 return NotFound(new { message = "Sikertelen törlés." });
             }
         }
+
+        [Authorize]
+        [HttpGet("byid")]
+        public async Task<ActionResult> GetUser(int id)
+        {
+            using (var context = new AuthdbContext())
+            {
+                var user = await context.Users.FindAsync(id);
+                if (user != null)
+                {
+                    await context.Users.ToListAsync();
+                    return Ok(new { message = "Sikeres lekérdezés.", result = user });
+                }
+                return NotFound(new { message = "Sikertelen lekérdezés." });
+            }
+        }
+
+
+        [Authorize]
+        [HttpPut]
+        public async Task<ActionResult> UpdateUser(int id, User user)
+        {
+            using (var context = new AuthdbContext())
+            {
+                var extendeduser = await context.Users.FindAsync(id);
+                if (user != null)
+                {
+                    extendeduser.Username = user.Username;
+                    extendeduser.Email = user.Email;
+                    extendeduser.Password = user.Password;
+
+                    context.Users.Update(extendeduser);
+                    await context.SaveChangesAsync();
+                    return Ok(new { message = "Sikeres módosítás.", result = user });
+                }
+                return NotFound(new { message = "Sikertelen módosítás." });
+            }
+        }
     }
 }

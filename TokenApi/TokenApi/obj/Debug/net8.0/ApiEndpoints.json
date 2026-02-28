@@ -27,6 +27,43 @@
   },
   {
     "ContainingType": "TokenApi.Controllers.UsersController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/Users",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "user",
+        "Type": "TokenApi.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TokenApi.Controllers.UsersController",
+    "Method": "GetUser",
+    "RelativePath": "api/Users/byid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TokenApi.Controllers.UsersController",
     "Method": "Login",
     "RelativePath": "api/Users/login",
     "HttpMethod": "POST",

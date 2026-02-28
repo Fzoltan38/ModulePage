@@ -83,6 +83,56 @@ document.getElementById("userForm1").onsubmit = async (e) => {
     loadComponent('users');
 }
 
+//Adott user frissítése
+
+async function UpdateUser(id) {
+    //Adatok betöltése form-ba
+    let form = document.getElementById('userForm1');
+
+    let getByIdUrl = `https://localhost:7082/api/Users/byid?id=${id}`;
+    let updateUserUrl = `https://localhost:7082/api/Users?id=${id}`;
+
+    let httpRequestGetByID = await fetch(getByIdUrl, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem("token")}`
+        }
+
+    })
+
+    let httpResponseGetById = await httpRequestGetByID.json();
+
+    form.elements["username"].value = httpResponseGetById.result.username;
+    form.elements["email"].value = httpResponseGetById.result.email;
+    form.elements["pass"].value = httpResponseGetById.result.password;
+
+    //Frissítés
+    document.getElementById("updateButton").onclick = async () => {
+        let user = {
+            username: form.elements["username"].value,
+            email: form.elements["email"].value,
+            password: form.elements["pass"].value,
+        }
+
+        let httpRequestUseUrl = await fetch(updateUserUrl, {
+            method: 'PUT',
+            body: JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+
+        let httpResponseUserUrl = await httpRequestUseUrl.json();
+
+        alert(httpResponseUserUrl.message);
+        loadComponent('users');
+
+    }
+
+}
+
 function renderUsers(users) {
     let contentText = "";
 
@@ -106,5 +156,11 @@ function renderUsers(users) {
         card.ondblclick = () => {
             DeleteUser(card.dataset.id);
         }
+
+        card.onclick = () => {
+            UpdateUser(card.dataset.id);
+        }
     })
+
+
 }

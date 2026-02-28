@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{5F386033-581C-B907-F05E-158DA995C49A}|TokenApi\\TokenApi.csproj|solutionrelative:tokenapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F386033-581C-B907-F05E-158DA995C49A}|TokenApi\\TokenApi.csproj|c:\\users\\zoli\\desktop\\2025_2026\\c#oktav\\tan1\\javascript\\singlepage\\tokenapi\\tokenapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5F386033-581C-B907-F05E-158DA995C49A}|TokenApi\\TokenApi.csproj|solutionrelative:tokenapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5F386033-581C-B907-F05E-158DA995C49A}|TokenApi\\TokenApi.csproj|c:\\users\\zoli\\desktop\\2025_2026\\c#oktav\\tan1\\javascript\\singlepage\\tokenapi\\tokenapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5F386033-581C-B907-F05E-158DA995C49A}|TokenApi\\TokenApi.csproj|solutionrelative:tokenapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F386033-581C-B907-F05E-158DA995C49A}|TokenApi\\TokenApi.csproj|c:\\users\\zoli\\desktop\\2025_2026\\c#oktav\\tan1\\javascript\\singlepage\\tokenapi\\tokenapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5F386033-581C-B907-F05E-158DA995C49A}|TokenApi\\TokenApi.csproj|solutionrelative:tokenapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5F386033-581C-B907-F05E-158DA995C49A}|TokenApi\\TokenApi.csproj|c:\\users\\zoli\\desktop\\2025_2026\\c#oktav\\tan1\\javascript\\singlepage\\tokenapi\\tokenapi\\models\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\zoli\\Desktop\\2025_2026\\C#Oktav\\Tan1\\JavaScript\\SinglePage\\TokenApi\\TokenApi\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "TokenApi\\Properties\\launchSettings.json",
@@ -55,13 +55,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\zoli\\Desktop\\2025_2026\\C#Oktav\\Tan1\\JavaScript\\SinglePage\\TokenApi\\TokenApi\\Models\\User.cs",
               "RelativeDocumentMoniker": "TokenApi\\Models\\User.cs",
               "ToolTip": "C:\\Users\\zoli\\Desktop\\2025_2026\\C#Oktav\\Tan1\\JavaScript\\SinglePage\\TokenApi\\TokenApi\\Models\\User.cs",
               "RelativeToolTip": "TokenApi\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-21T10:59:30.343Z",
               "EditorCaption": ""
@@ -123,7 +123,7 @@
               "RelativeDocumentMoniker": "TokenApi\\Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\zoli\\Desktop\\2025_2026\\C#Oktav\\Tan1\\JavaScript\\SinglePage\\TokenApi\\TokenApi\\Controllers\\UsersController.cs",
               "RelativeToolTip": "TokenApi\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwA4AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAowGIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T10:07:04.608Z",
               "EditorCaption": ""
